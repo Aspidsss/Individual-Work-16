@@ -4,11 +4,7 @@ from flask_jwt_extended import jwt_required
 from app import db
 
 parser = reqparse.RequestParser()
-parser.add_argument('firstname', type=str, required=True, help="firstname обязательное поле")
-parser.add_argument('lastname', type=str, required=True, help="lastname обязательное поле")
-parser.add_argument('phone', type=str, required=True, help="phone обязательное поле")
-parser.add_argument('email', type=str, required=True, help="email обязательное поле")
-parser.add_argument('status', type=bool, required=True, help="status обязательное поле")
+parser.add_argument('login', type=str, required=True, help="login обязательное поле")
 parser.add_argument('password', type=str, required=True, help="password обязательное поле")
 
 
@@ -27,11 +23,7 @@ class UserResource(Resource):
         )
         args = parser.parse_args()
 
-        user.firstname = args['firstname']
-        user.lastname = args['lastname']
-        user.email = args['email']
-        user.phone = args['phone']
-        user.status = args['status']
+        user.login = args['login']
         db.session.commit()
 
         return {'msg': 'OK', 'data': user.serialize()}, 200
@@ -50,7 +42,7 @@ class UserListResource(Resource):
 
     def post(self):
         args = parser.parse_args()
-        user = User(firstname=args['firstname'], lastname=args['lastname'], email=args['email'], phone=args['phone'], status=args['status'])
+        user = User(login=args['login'])
         user.set_password(args['password'])
         db.session.add(user)
         db.session.commit()

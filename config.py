@@ -15,6 +15,7 @@ class Config(object):
     JWT_BLACKLIST_ENABLED = True
     JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'token']
 
-    jwt_expires = os.environ.get('JWT_ACCESS_TOKEN_EXPIRES')
-    if (jwt_expires):
-        JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(seconds=int(jwt_expires))
+    PROPAGATE_EXCEPTIONS = True
+
+    jwt_expires = 900
+    JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(seconds=int(jwt_expires))
