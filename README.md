@@ -42,3 +42,7 @@ _____
 :white_check_mark: <b>Готово!</b> :+1: :tada: 
 
 Проект запущен и доступен по адресу: `http://localhost:5000/` или `http://127.0.0.1:5000/`
+
+### Документация API
+
+Примеры выполнения запросов хранятся в [Postman](https://github.com/Aspidsss/Individual-Work-16/blob/main/SergeyCollection.postman_collection.json) коллекции
