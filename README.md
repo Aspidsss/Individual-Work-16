@@ -5,7 +5,6 @@
 ## Требования
 - [Python 3.9.x](https://www.python.org/downloads/)
 - [Git](https://git-scm.com)
-- [Ngrok](https://ngrok.com/download) - опциально, для деплоя веб-сервера в сети
 
 ## Деплой проекта
 
